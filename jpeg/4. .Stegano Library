@@ -1,0 +1,22 @@
+"""
+Text Example: A Simple Demonstration of Steganography
+
+**Script Overview:**
+---------------------
+1. **Appending Information:**
+   - Open the image file (`cat.jpg`) in binary mode and append the message "Hello World" as bytes just before the EOF (End of File) marker.
+
+2. **Binary Mode:**
+   - Operate in binary mode to handle the image file's binary data.
+
+3. **Reading Hidden Message:**
+   - Locate the EOF marker within the file's content.
+   - Adjust the offset by an additional 2 bytes to ensure any appended information is captured.
+   - Print the extracted information.
+
+**Running the Script:**
+-------------------------
+1. Navigate to the `text_example` directory of the steganography project.
+2. Run the script `./main.py`.
+3. In the terminal, the printed output should display the hidden message as: `b'Hello World'`.
+"""
