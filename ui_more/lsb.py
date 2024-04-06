@@ -10,7 +10,7 @@ file = input("PHOTO: ")
 img = Image.open(file)
 img_stegano = stepic.encode(img, Data.encode())
 
-img_stegano.save("somenew.jpeg")
+img_stegano.save("s1.png")
 
 print("*--------------*")
 

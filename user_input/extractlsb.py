@@ -17,7 +17,7 @@ def extract_message_from_image(image_path):
     secret_bits = [bin(img_arr[i][j])[-1] for i in range(pixels) for j in range(0,3)]
     secret_bits = ''.join(secret_bits)
     secret_bits = [secret_bits[i:i+8] for i in range(0, len(secret_bits),8)]
-
+    #This is the process that reads image, extracts lsb of color channels, and stops at the indicator to print message, prints error if not there
     secret_message = [chr(int(secret_bits[i],2)) for i in range(len(secret_bits))]
     secret_message = ''.join(secret_message)
 
@@ -31,12 +31,12 @@ def extract_message_from_image(image_path):
 # Function to select file
 def select_file():
     root = tk.Tk()
-    root.withdraw()  # Hide the main window
+    root.withdraw()  
     file_path = filedialog.askopenfilename()  # Open file dialog
     return file_path
 
 # Get the path of the image
-image_path = select_file()  # Select image file
+image_path = select_file()  
 
 # Call the function to extract message from image
 extracted_message = extract_message_from_image(image_path)

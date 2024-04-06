@@ -12,7 +12,7 @@ def hide_message_in_image(image_path, message):
     img_arr = np.array(list(image.getdata()))
 
     if image.mode == "P":
-        print("Not Supported")
+        print("Not Supported") #Checks to see if image is in color mapped mode, The steg process is different
         return
 
     channels = 4 if image.mode == "RGBA" else 3
@@ -22,9 +22,9 @@ def hide_message_in_image(image_path, message):
     stop_indicator = "TIVH"
     stop_indicator_length = len(stop_indicator)
 
-    message += stop_indicator
+    message += stop_indicator #Binds stop indicator to message
 
-    byte_message = ''.join(f"{ord(c):08b}" for c in message)
+    byte_message = ''.join(f"{ord(c):08b}" for c in message) #convert the message to binary represenation
     bits = len(byte_message)
 
     if bits > pixels:
@@ -34,10 +34,10 @@ def hide_message_in_image(image_path, message):
         for i in range(pixels):
             for j in range(0,3):
                 if index < bits:
-                    img_arr[i][j] = int(bin(img_arr[i][j])[2:-1]+ byte_message[index],2)
+                    img_arr[i][j] = int(bin(img_arr[i][j])[2:-1]+ byte_message[index],2) #Iterates loops 3 times for RGB, and hides information with LSB of the pixel values
                     index += 1
-
-    img_arr = img_arr.reshape((height, width, channels))
+# Changes numpy array back into a image formate
+    img_arr = img_arr.reshape((height, width, channels)) 
     result = Image.fromarray(img_arr.astype('uint8'), image.mode)
     result.save('encoded.png')
 

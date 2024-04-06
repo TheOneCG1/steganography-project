@@ -1,0 +1,31 @@
+**Steganalysis: Unveiling Hidden Data in Digital Media**
+
+Steganalysis is the process of scrutinizing non-human media, such as images or audio files, for concealed information using steganographic techniques. It involves employing various analytical methods to detect, analyze, and extract hidden data from digital media, aiding in uncovering covert communications or malicious activities.
+
+**Tools for Steganalysis:**
+
+When encountering suspected steganographic content, analysts rely on specialized tools to assist in the investigation. Two commonly used tools for steganalysis are StegSolve and Zsteg.
+
+1. **StegSolve:** StegSolve is a versatile tool that enables users to visually inspect an image's RGB layers and manipulate color channels to reveal hidden content. Although StegSolve offers valuable functionalities, it may not be suitable for all steganographic techniques. 
+
+   **Installation:** StegSolve is a standalone Java application that can be downloaded from the following link: [StegSolve](https://github.com/ebskap/OutGuess).
+
+   **Supplemental Information:** For a practical demonstration of StegSolve usage, refer to the Forensic Cool School challenge in TJCTF 2022: [Forensic Cool School](https://2022.ctf.tjctf.org/challs).
+
+2. **Zsteg:** Zsteg is a command-line tool designed specifically for LSB steganalysis in digital images. It allows users to examine the planes of an image to detect the presence of hidden data.
+
+   **Installation:** Zsteg can be installed via the command line using the following command:
+
+   ```bash
+   gem install zsteg
+   ```
+
+   **Supplemental Information:** To conduct a comprehensive analysis using Zsteg, utilize the following command: `zsteg -a image.png` (replace "image.png" with the filename of the image).
+
+**Using Zsteg for Steganalysis:**
+
+Zsteg operates by analyzing the different bit planes of an image, ranging from the least significant bit (plane 0) to the most significant bit (plane 7). By traversing through these planes, Zsteg identifies hidden data and presents it to the user. Try using some of the pictures, I provided, and pictures you encoded.
+
+**Conclusion:**
+
+Steganalysis plays a crucial role in digital forensics and cybersecurity, enabling investigators to uncover concealed information and detect potential threats. With tools like StegSolve and Zsteg, analysts have the means to conduct thorough analyses and reveal hidden content within digital media.

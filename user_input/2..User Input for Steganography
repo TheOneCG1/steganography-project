@@ -1,0 +1,54 @@
+## User Input for Steganography
+
+### Overview:
+The purpose of this directory is to facilitate the encoding and decoding of messages within image files using the Least Significant Bit (LSB) technique. This technique allows for hiding information within the least significant bits of pixel values, thus altering the image imperceptibly.
+
+### Dependencies:
+This directory utilizes the following Python libraries:
+
+- **PIL (Python Imaging Library) / Pillow**: Allows for opening and manipulating images of various formats.
+- **NumPy**: Provides support for numerical computing, particularly dealing with arrays and matrices of different dimensions.
+- **Tkinter**: A GUI toolkit for Python, enabling file selection functionalities.
+
+### File Descriptions:
+
+1. **LSB.py**:
+   - This script contains functions to hide a message within an image file.
+   - **Functionality**:
+     - User provides an image file path and the message to be hidden.
+     - The script verifies if the image is in the correct mode for steganography. (Color-mapped images have a different process.)
+     - The message is converted into a binary representation and hidden within the pixel values.
+     - The modified pixel values are converted back to an image format.
+   - **To Run**: Execute `./lsb.py`.
+   
+2. **extractlsb.py**:
+   - This script extracts a hidden message from an image file.
+   - **Functionality**:
+     - Reads an image file.
+     - Extracts the LSBs of the color channels of each pixel.
+     - Decodes these bits into ASCII characters to reveal the hidden message.
+     - Stops decoding when a predefined stop indicator is encountered.
+     - Returns the extracted message or an error message if the stop indicator is not found.
+   - **To Run**: Execute `./extractlsb.py`.
+   
+### Instructions for Use:
+
+1. **Setup**:
+   - Navigate to the `user_input` directory.
+   - Ensure that the required dependencies (NumPy, PIL, Tkinter) are installed. If not, install them using `pip install Pillow numpy tkinter`.
+
+2. **Running LSB.py**:
+   - Execute `./lsb.py`.
+   - Select an image file when prompted.
+   - Enter the text message you want to hide.
+   - The encoded image (`encoded_image.png`) will be saved in the directory.
+
+3. **Running extractlsb.py**:
+   - Execute `./extractlsb.py`.
+   - Upload the `encoded_image.png` file.
+   - The hidden message will be extracted and displayed.
+
+### Notes:
+- Both scripts are executable, allowing for direct execution without explicitly calling `python`.
+- Ensure that the selected image file is in a compatible format (e.g., JPEG, PNG).
+- The hidden message is encoded using the LSB technique, maintaining the integrity of the original image.

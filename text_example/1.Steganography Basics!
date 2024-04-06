@@ -1,0 +1,27 @@
+**Steganography: Concealing Information in Plain Sight**
+
+Steganography, derived from the Greek words "steganos" (meaning "covered" or "concealed") and "graphia" (meaning "writing" or "drawing"), is the art and science of concealing information within a non-human medium, such as images, text, audio, or even video. Unlike cryptography, which focuses on encrypting data to secure it from unauthorized access, steganography aims to hide the very existence of the communication itself. It operates on the principle of security through obscurity, where the secrecy of the message relies on its stealth rather than its encryption.
+
+**Text Example: Illustrating Steganography**
+
+The provided Text example demonstrates a simple implementation of steganography. In this scenario, we're utilizing the technique of appending and storing information at the end of a file. While there exist multiple techniques for steganography, this approach is straightforward and often the most obvious.
+
+Within the Text example, we open a file, "cat.jpg", which serves as our carrier medium. Instead of altering the image directly, we write the message "Hello World" as bytes at the end of the file. Operating in binary mode, we access "cat.jpg" in a read-write binary format. This allows us to manipulate the file's contents at the byte level.
+
+To retrieve our hidden message, we must locate the end-of-file (EOF) marker within "cat.jpg" and adjust our offset by +2 bytes to ensure we capture the appended information accurately. Finally, we print the extracted information, revealing our hidden message.
+
+**Running the Text Example**
+
+To execute the Text example, navigate to the "text_example" directory within the steganography project. From there, run the following command:
+
+```bash
+./main.py
+```
+
+In the terminal, you should see the printed text as:
+
+```
+b'Hello World'
+```
+
+This output confirms the successful extraction of the hidden message "Hello World" from the image file "cat.jpg".

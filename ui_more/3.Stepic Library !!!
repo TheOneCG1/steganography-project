@@ -1,0 +1,38 @@
+
+**Steganography Simplified with Stepic**
+
+Stepic is a Python library for steganography, leveraging the least significant bit (LSB) technique to efficiently hide data within images. It automates the process of LSB manipulation, ensuring that the alterations are imperceptible to the human eye.
+
+**Using the UI-More Scripts**
+
+In the `ui-more` directory, three scripts are provided:
+
+1. **lsb.py**: Encodes any data (text, videos, images) into an image of your choice.
+2. **extractlsb.py**: Decodes hidden data, limited to text only due to Stepic's capabilities.
+3. **gui.py**: Combines the functionality of LSB encoding and extraction into a user-friendly GUI interface.
+
+**Running the Scripts**
+
+Ensure you have Stepic installed:
+
+```
+pip install stepic
+```
+
+Execute the scripts:
+
+```
+./lsb.py
+./extractlsb.py
+./gui.py
+```
+
+**Using the GUI**
+
+The GUI script simplifies the hiding of information within images. Upon execution, it presents an intuitive interface for users to encode and decode data effortlessly.
+
+**Notes**
+
+- When using the GUI, encoded data updates directly to the provided PNG filenames. Navigate to the specified file to reveal the hidden data.
+```
+
