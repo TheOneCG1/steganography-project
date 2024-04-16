@@ -8,7 +8,7 @@ When encountering suspected steganographic content, analysts rely on specialized
 
 1. **StegSolve:** StegSolve is a versatile tool that enables users to visually inspect an image's RGB layers and manipulate color channels to reveal hidden content. Although StegSolve offers valuable functionalities, it may not be suitable for all steganographic techniques. 
 
-   **Installation:** StegSolve is a standalone Java application that can be downloaded from the following link: [StegSolve](https://github.com/ebskap/OutGuess).
+   **Installation:** StegSolve is a standalone Java application that can be downloaded from the following link: [StegSolve](https://github.com/zardus/ctf-tools/blob/master/stegsolve/install).
 
    **Supplemental Information:** For a practical demonstration of StegSolve usage, refer to the Forensic Cool School challenge in TJCTF 2022: [Forensic Cool School](https://2022.ctf.tjctf.org/challs).
 
